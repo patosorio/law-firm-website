@@ -17,6 +17,10 @@
 
 # public assets (if you want to exclude them)
 /public/
+seedContentBlog.json
+seedContentBlog-2.json
+seedContentES.json
+seedContentIT.json
 
 # production
 /build

@@ -1,5 +1,39 @@
 // Site content types for Firestore documents - organized by component
 
+// Blog post types
+export interface BlogPostTranslation {
+  title: string;
+  metaTitle: string;
+  metaDescription: string;
+  excerpt: string;
+  canonicalUrl: string;
+  og: {
+    title: string;
+    description: string;
+  };
+  introduction: string;
+  main_content: string;
+  summary: string;
+  conclusion: string;
+}
+
+export interface BlogPost {
+  id: number;
+  slug: string;
+  category: string;
+  tags: string[];
+  author: string;
+  status: string;
+  publishedAt: string;
+  updatedAt: string;
+  readingMinutes: number;
+  og: { type: string };
+  translations: {
+    es: BlogPostTranslation;
+    en: BlogPostTranslation;
+  };
+}
+
 // Header component content
 export interface HeaderContent {
   logoText: string;
