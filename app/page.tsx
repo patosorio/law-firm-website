@@ -4,10 +4,10 @@ import { ServicesSection } from "@/components/services-section"
 import { AboutSection } from "@/components/about-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
-import { getSiteContent } from "@/lib/firebase/site-content"
+import { getSiteContentServer } from "@/lib/firebase/site-content-server"
 
 export default async function HomePage() {
-  const content = await getSiteContent('en');
+  const content = await getSiteContentServer('en');
 
   return (
     <div className="min-h-screen bg-background">

@@ -1,10 +1,10 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { BlogPostCard } from "@/components/blog-post-card"
-import { getBlogPostsSafe } from "@/lib/firebase/site-content"
+import { getBlogPostsSafeServer } from "@/lib/firebase/site-content-server"
 
 export default async function BlogPage() {
-  const { posts, error } = await getBlogPostsSafe('en');
+  const { posts, error } = await getBlogPostsSafeServer('en');
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -15,7 +15,7 @@ export default async function BlogPage() {
               Legal Insights & Updates
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Stay informed with the latest developments in immigration law, Second Chance Law, and legal guidance for expatriates in Spain.
+            Clear insight on new laws. Empowering your decisions.
             </p>
           </div>
           

@@ -1,7 +1,7 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { BlogPostContent } from "@/components/blog-post-content"
-import { getBlogPostById } from "@/lib/firebase/site-content"
+import { getBlogPostByIdServer } from "@/lib/firebase/site-content-server"
 import { notFound } from "next/navigation"
 
 interface BlogPostPageProps {
@@ -17,7 +17,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound()
   }
 
-  const post = await getBlogPostById(postId)
+  const post = await getBlogPostByIdServer(postId)
   
   if (!post || post.status !== 'published') {
     notFound()
